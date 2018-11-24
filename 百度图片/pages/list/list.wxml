@@ -1,0 +1,15 @@
+<!--pages/list/list.wxml-->
+
+<import src="../template/template.wxml"/>
+<scroll-view scroll-y bindscrolltolower="moreData">
+  <view class='image-contain'>
+    <view class='image-list'>
+      <template is="item" wx:for="{{imgs.left}}" data="{{...item}}"></template>
+   </view>
+   <view class='image-list'>
+     <template is="item" wx:for='{{imgs.right}}' data="{{...item}}"></template>
+    </view>
+  </view>
+</scroll-view>
+
+<!-- 使用scroll-view时，原本的弹性盒模型失效，可以使用浮动或者再加一层盒子的情况处理 -->

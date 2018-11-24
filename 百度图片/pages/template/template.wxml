@@ -1,0 +1,6 @@
+<template name="item">
+<view class='image-item' >
+  <image src='{{middleURL}}'  mode='widthFix' bindtap='showImg' data-src='{{middleURL}}'></image>
+  <image src='../../images/download.png' class='dl' bindtap='downloadImg' data-src='{{middleURL}}'></image>
+</view>
+</template>

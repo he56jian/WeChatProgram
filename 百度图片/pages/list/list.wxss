@@ -1,0 +1,14 @@
+/* pages/list/list.wxss */
+@import '../template/template.wxss';
+.image-contain{
+  display: flex;
+  height:100Vh;
+}
+.image-list{
+  flex:1;
+}
+::-webkit-scrollbar{
+  width:0;
+  height:0;
+  color:transparent;
+}

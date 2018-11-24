@@ -1,0 +1,17 @@
+<form bindsubmit='query'>
+  <view class='index'>
+    <image src='../../images/bg-box.jpg'>
+    </image>
+    <view class='box'>
+      <view class='title'>图片搜索</view>
+      <input class='search' type='text' value='{{inputData}}' name="searchMass">
+      <button form-type='submit' class='sea-icon'>
+        <icon type='search'  size="20" color="white"></icon>
+      </button>
+    </input>
+    </view>
+    <view class='quickcho'>
+      <navigator url='../list/list?word={{item}}' class='item' wx:for='{{quickItem}}' bindtap='click'>{{item}}</navigator> 
+    </view>
+  </view>
+</form>
