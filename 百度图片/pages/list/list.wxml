@@ -3,12 +3,14 @@
 <import src="../template/template.wxml"/>
 <scroll-view scroll-y bindscrolltolower="moreData">
   <view class='image-contain'>
-    <view class='image-list'>
-      <template is="item" wx:for="{{imgs.left}}" data="{{...item}}"></template>
-   </view>
-   <view class='image-list'>
+    <template is='list' wx:for="{{imgs}}"  wx:for-item="lists" data="{{lists}}">
+    </template>
+    <!-- <view class='image-list' wx:for="{{imgs}}">
+      <template is="item" wx:for="{{item}}" data="{{...item}}"></template>
+   </view> -->
+   <!-- <view class='image-list'>
      <template is="item" wx:for='{{imgs.right}}' data="{{...item}}"></template>
-    </view>
+    </view> -->
   </view>
 </scroll-view>
 

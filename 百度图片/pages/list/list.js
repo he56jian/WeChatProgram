@@ -10,16 +10,12 @@ Page({
     word:'猫',  //搜索内容
     page:1,   //加载第几页
     row:30,    //每页加载多少条
-    imgs:{      //图片容器
-      left:[],
-      right:[],
-      all:[]
-    },
-    height:{        //用于判断加在左边还是右边
-      left:0, 
-      right:0
-    }
-
+    list:3,
+    //图片容器
+    imgs:[],
+    //每一列高度
+    height:[],
+    org:[]  //原始数据
   },
 
   /**
@@ -27,14 +23,26 @@ Page({
    * 当前为白屏时刻，
    */
   onLoad: function (options) {
-    this.data.word = options.word;
+    this.data.word = options.word || '女孩';
     //使用setData会重新更新渲染页面
     // this.setData({
     //   word: options.word
     // });
-   this.showPage();
+    this.createPage();
+    this.showPage();
+    wx.setNavigationBarTitle({
+      title: this.data.word,
+    })
   },
-  
+  //创建页数
+  createPage(){
+    //创建空数据
+     // this.data.imgs[0].push('Niaho')
+    //直接使用push,会导致imgs的所有内容都变为Niaho,是因为填充[]的时候填充的是引用数据，后面push会导致每个都变了
+    this.data.imgs = new Array(this.data.list).fill(0).map(()=>[]);
+    this.data.height = new Array(this.data.list).fill(0);
+  },
+
   //请求页面数据
   showPage(){
     //分页加载 
@@ -54,6 +62,8 @@ Page({
    * 
   */
   query(){
+    //加载请求动画
+    wx.showNavigationBarLoading();
     let questUrl = this.codeUrl();
     return new Promise((resolve,reject)=>{
       //开始发送请求
@@ -93,21 +103,47 @@ Page({
   //数据筛选，把数据放到两边
   showData(data){
     data.forEach((img)=>{
-      //如果左边的高，就放右边
-      if(this.data.height.left <= this.data.height.right){
-        this.data.imgs.left.push(img);
-        this.data.height.left += img.height;
-      }else {
-        this.data.imgs.right.push(img);
-        this.data.height.right += img.height;
-      }
-      this.data.imgs.all.push(img);
+      this.data.org.push(img);
+      // //如果左边的高，就放右边
+      // if(this.data.height.left <= this.data.height.right){
+      //   this.data.imgs.left.push(img);
+      //   this.data.height.left += img.height;
+      // }else {
+      //   this.data.imgs.right.push(img);
+      //   this.data.height.right += img.height;
+      // }
+      // this.data.imgs.all.push(img);
+
+      //1、从数组中找到最小高度的索引
+      //2、根据这个索引找到图片数组push添加图片
+      //3、更新高度；
+      // let minIndex = this.minList();
+      let min = Math.min(...this.data.height);
+      let minIndex = this.data.height.findIndex(item=>min === item);    //返回最小高度的索引；当min===item为真时，返回item的索引
+      this.data.imgs[minIndex].push(img);
+      this.data.height[minIndex]+=img.height;
     });
     this.setData({
       imgs:this.data.imgs
-    })
-    
+    });
+
+    //加载动画取消
+    wx.hideNavigationBarLoading();
   },
+  //判断最矮高度
+  minList(){
+    let minItem = this.data.height[0];   //先设定最小为第一列
+    let minIndex = 0;
+    this.data.height.forEach((item,index)=>{
+      if (minItem >= item){
+        minIndex = index;
+        minItem = item;
+      }
+    });
+    return minIndex;
+  },
+
+
   //保持粒度，一个方法多次调用
   codeUrl(){ 
     //http://image.baidu.com/search/acjson?tn=resultjson_com&ipn=rj&word=%E7%8C%AB&pn=0&rn=10
@@ -141,10 +177,18 @@ Page({
 
   //显示大图
   showImg(event){
-    console.log(event)
     let current = event.currentTarget.dataset.src;
-    let urls = [...this.data.imgs.all].map(item => { return item.thumbURL});
-    console.log(current,urls);
+    // let urls = [];
+    // [this.data.imgs].map(
+    //   item => { 
+    //     item.map((data)=>{
+    //       data.forEach((cItem =>{
+    //         urls.push(cItem.middleURL);
+    //       }))
+    //     })
+    //   });
+    console.log(this.data.org);
+    let urls = this.data.org.map((item) => item.middleURL);
     wx.previewImage({
       urls,
       current,
