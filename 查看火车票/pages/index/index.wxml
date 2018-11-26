@@ -1,0 +1,25 @@
+<view class='container'>
+  <form class='query' bindsubmit='query'>
+    <view class='query-city'>
+      <input name='form' /> 
+      <image src='/images/tab.png'></image>
+      <input name='to' />
+    </view>
+    <view class='query-time'>
+      <text class='date-tag'>出发日期：</text>
+      <view class='date-content'>
+        <picker mode="date" value='{{startTime}}' start="{{startTime}}" end='{{endTime}}' bindchange="goTime" class='query-date'>
+          <input value="{{gotime ? gotime:startTime}}" name='gotime'/>
+        </picker>
+        <text>-</text>
+        <picker mode="date" value='{{startTime}}' start="{{gotime ? gotime:startTime}}" end="{{endTime}}" bindchange="goTime" class='query-date'>         
+          <input value="{{endtime? endTime:startTime}}" name='endtime'/>
+        </picker>
+      </view>
+      
+    </view>
+    <button class='search-btn' form-type='submit'>查询</button>
+  </form>
+
+
+</view>

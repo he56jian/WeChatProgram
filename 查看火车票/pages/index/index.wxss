@@ -1,0 +1,59 @@
+page{
+  background-color:#e2dede;
+}
+.container{
+  background-color:#fff;
+  padding:10px;
+}
+.query-city{
+  display:flex;
+  padding:10px;
+  justify-content: space-between
+}
+.query-city input{
+  height:70rpx;
+  padding-left:5px;
+  border:1px solid #e2dede;
+  font-size:36rpx;
+}
+.query-city image{
+  width:70rpx;
+  height:70rpx;
+  margin:0 20px
+}
+.query-time{
+  height:70rpx;
+  margin:0 10px 10px;
+}
+
+.query-date{
+  width:50%;
+}
+.query-date input{
+  height: 70rpx;
+  padding:0 15rpx;
+  font-size:36rpx;
+  color:rgb(15, 8, 20);
+  border:1px solid #e2dede;
+}
+.query-time .date-tag{
+  float:left;
+  line-height: 70rpx;
+}
+.date-content{
+  display: flex;
+  justify-content: space-between;
+}
+.date-content text{
+  line-height: 70rpx;
+  margin:0 10rpx;
+}
+.search-btn{
+  margin:10px;
+  background-color: #bd5b22;
+  color:#fff;
+  border-radius: 10px;
+}
+.search-btn::after{
+  border:none;
+}
