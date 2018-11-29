@@ -4,9 +4,6 @@
     "pages/list/list"
   ],
   "window":{
-    "backgroundTextStyle":"light",
-    "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "火车票查询",
-    "navigationBarTextStyle":"black"
+    "navigationStyle":"custom"
   }
 }

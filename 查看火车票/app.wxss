@@ -1,0 +1,21 @@
+.header-nav{
+  width:100%;
+  padding:20px 20px 10px 10px;
+  background-color:rgb(11, 156, 240);
+}
+.head{
+  display: flex;
+}
+.head .head-back{
+  display: block;
+  width:35px;
+  height:35px;
+  margin-right:20px;
+}
+.head .head-title{
+  flex:1;
+  height:35px;
+  line-height: 35px;
+  margin-right:40px;
+  color:#fff;
+}

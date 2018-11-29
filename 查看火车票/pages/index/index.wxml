@@ -1,20 +1,23 @@
+
+<view class='header'>
+  <image src='/images/train.jpg' class='header-img' mode='aspectFit'></image>
+</view>
+
 <view class='container'>
   <form class='query' bindsubmit='query'>
     <view class='query-city'>
-      <input name='form' /> 
+      <input name='from' /> 
       <image src='/images/tab.png'></image>
       <input name='to' />
     </view>
     <view class='query-time'>
       <text class='date-tag'>出发日期：</text>
       <view class='date-content'>
-        <picker mode="date" value='{{startTime}}' start="{{startTime}}" end='{{endTime}}' bindchange="goTime" class='query-date'>
-          <input value="{{gotime ? gotime:startTime}}" name='gotime'/>
+        <picker mode="date" value='{{startTime}}' start="{{startTime}}" end='{{endTime}}' bindchange="trainDate" class='query-date'>
+          <input value="{{trainDate ? trainDate:startTime}}" name='trainDate' disabled/>
         </picker>
-        <text>-</text>
-        <picker mode="date" value='{{startTime}}' start="{{gotime ? gotime:startTime}}" end="{{endTime}}" bindchange="goTime" class='query-date'>         
-          <input value="{{endtime? endTime:startTime}}" name='endtime'/>
-        </picker>
+        <!-- <text>-</text> -->
+        <text class='date-week'>星期{{startWeek}}</text>
       </view>
       
     </view>

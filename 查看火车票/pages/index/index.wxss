@@ -1,9 +1,20 @@
 page{
   background-color:#e2dede;
 }
+.header{
+  width:100%;
+  background-color:#fff;
+}
+.header-img{
+  display: block;
+  height:80px;
+}
 .container{
   background-color:#fff;
   padding:10px;
+}
+.query{
+  display:block;
 }
 .query-city{
   display:flex;
@@ -17,13 +28,14 @@ page{
   font-size:36rpx;
 }
 .query-city image{
+  display: block;
   width:70rpx;
-  height:70rpx;
-  margin:0 20px
+  height:50rpx;
+  margin:11rpx 20px
 }
 .query-time{
   height:70rpx;
-  margin:0 10px 10px;
+  padding:0 10px 10px;
 }
 
 .query-date{
@@ -34,7 +46,6 @@ page{
   padding:0 15rpx;
   font-size:36rpx;
   color:rgb(15, 8, 20);
-  border:1px solid #e2dede;
 }
 .query-time .date-tag{
   float:left;
@@ -44,9 +55,8 @@ page{
   display: flex;
   justify-content: space-between;
 }
-.date-content text{
+.date-week{
   line-height: 70rpx;
-  margin:0 10rpx;
 }
 .search-btn{
   margin:10px;

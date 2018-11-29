@@ -1,1 +1,104 @@
-/* pages/list/list.wxss */
+
+@import '../../app.wxss';
+page{
+  background-color:#aaa;
+}
+.header-nav + .container{
+  height:calc(100vh - 65px);
+  overflow-y: scroll;
+}
+
+.train-head{
+  display: flex;
+  background-color:#fff;
+  padding:10px;
+  font-size: 36rpx;
+}
+.train-head-img image{
+  display: block;
+  width:100px;
+  height:76px;
+}
+.train-head-city{
+  display: flex;
+  flex:1;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  height:76px;
+  line-height: 76px;
+}
+.train-head-city text{
+  display:block;
+  align-items: center;
+  height:30px;
+  line-height: 30px;
+}
+.train-head-price{
+  display: block;
+  height:76px;
+  line-height: 76px;
+  color:rgb(240, 99, 6);
+}
+
+/* 火车列表 */
+.train-list{
+  width:100%;
+  font-size:35rpx;
+  background-color:#fff;
+}
+.train-list .train-item{
+  display: flex;
+  margin:10rpx 0;
+  padding-top: 10px;
+}
+.train-list .train-item > view{
+  flex:1;
+  text-align:center;
+}
+.train-list .train-item-startStation,
+.train-list .train-item-name,
+.train-list .train-item-endStation{
+  font-size: 30rpx;
+}
+.train-list .train-item-durMass{
+  align-items: center;
+  font-size: 30rpx;
+}
+.train-item-durMass-liner{
+  display: flex;
+  align-items: center;
+}
+.train-item-durMass-liner .line{
+  flex:1;
+  border-bottom:2px solid rgb(200, 200, 200);
+}
+.train-item-durMass-liner .radius{
+  width:6px;
+  height:6px;
+  background-color:rgb(200, 200, 200);
+  border-radius: 50%;
+}
+.train-list .train-item-name{
+  display: block;
+}
+.train-item-price{
+  font-size: 28rpx;
+  color:rgb(151, 147, 147);
+  line-height: 76rpx;
+}
+.train-item-price .price-num{
+  color:rgb(240, 99, 6);
+  font-size: 36rpx;
+}
+
+.train-item-tickets{
+  display: flex;
+  font-size: 26rpx;
+  padding-bottom:10px;
+  color:rgb(151, 147, 147);
+}
+.train-item-tickets > view{
+  flex: 1;
+  margin-left:15px;
+}

@@ -1,2 +1,53 @@
-<!--pages/list/list.wxml-->
-<text>pages/list/list.wxml</text>
+
+<view class='header-nav'>
+  <navigator class='head' open-type='navigateBack' delta='1'> 
+    <image src='/images/back.jpg' class='head-back'></image>
+    <text class='head-title'>标题</text>
+  </navigator>
+</view>
+<!-- 火车票头部 -->
+<view class='container'>
+<view class='train-head'>
+  <view class='train-head-img'>
+    <image src='/images/train.jpg' mode='widthFix'></image>
+  </view>
+  <view class='train-head-city'>
+    <text>{{from}} - {{to}}</text>
+    <text>{{goDate}}</text>
+  </view>
+  <view class='train-head-price'>
+    ￥275
+  </view>
+</view>
+<!-- 火车票列表 -->
+<view class='train-list' wx:for='{{trains}}' wx:for-item="train">
+  <view class='train-item'>
+    <view class='train-item-startMass'>
+      <view class='train-item-startTime'>{{train.fromTime}}</view>
+      <view class='train-item-startStation'>{{train.fromCity}}</view>
+    </view>
+    <view class='train-item-durMass'>
+      <text class='train-item-duration'>{{train.usedTime}}</text>
+      <view class='train-item-durMass-liner'>
+        <view class='radius'></view>
+        <view class='line'></view>
+        <view class='radius'></view>
+      </view>
+      <text class='train-item-name'>{{train.num}}</text>
+    </view>
+    <view class='train-item-endMass'>
+      <view class='train-item-endTime'>{{train.toTime}}</view>
+      <view class='train-item-endStation'>{{train.toCity}}</view>
+    </view>
+    <view class='train-item-price'>
+      <text class='price-num'>￥{{train.price}}</text>
+      <text>起</text>
+    </view>
+  </view>
+  <view class='train-item-tickets'>
+    <view  wx:for='{{train.ticketInfo}}' wx:for-item='ticket'>
+      {{ticket.ticketName}}:<text class='train-tickets-Two'>{{ticket.ticketNum}}</text>张
+    </view>
+  </view>
+</view>
+</view>
