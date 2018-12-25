@@ -1,0 +1,6 @@
+
+@import "../../template/public/bottom-player.wxss";
+
+.scroll-songs{
+  height:calc(100vh - 50px);
+}

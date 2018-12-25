@@ -1,0 +1,16 @@
+<import src="/template/public/bottom-player.wxml" />
+<import src="./query-form.wxml" />
+
+<view class='container'>
+ <template is="query-form" data="{{searchVal}}"></template>
+  <view class='form-list'>
+    <view class='form-list-item' wx:for="{{history}}" wx:for-item="historyItem">
+      <image src='/images/search.jpg'></image>
+      <navigator url="list?searchVal={{historyItem.name}}">{{historyItem.name}}</navigator>
+      <image src='/images/del.jpg' bindtap='del' data-song="{{historyItem.name}}"></image>
+    </view>
+  </view>
+</view>
+
+<!-- 底部播放器 -->
+<template is="bottom-player" data="{{...playSong}}"/>

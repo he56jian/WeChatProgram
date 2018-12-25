@@ -1,0 +1,70 @@
+
+@import "../../template/public/bottom-player.wxss";
+.container{
+  margin-bottom:50px;
+}
+
+/* 头部 */
+.header{
+  display:flex;
+    padding-bottom:10px;
+  background: #ade;
+  color:#fff;
+  justify-content: center;
+}
+.header navigator{
+  padding:0 20rpx 10rpx 30rpx;
+}
+.header navigator.on{
+  background:linear-gradient(#fff,#fff) no-repeat center bottom/90% 10%;
+}
+/* 轮播 */
+.banner swiper{
+  background:linear-gradient(#ade,#ade) no-repeat center top/100% 50%;
+}
+.banner swiper-item{
+  box-sizing: border-box;
+  width:100%;
+  height:100%;
+  padding:0 10px;
+}
+.banner swiper-item image{
+  height:100%;
+  width:100%;
+  border-radius: 10px;
+}
+
+
+/* 国家地区 */
+.region-type{
+  display: flex;
+  padding:40rpx 0 30rpx 0px;
+  justify-content: space-around;
+  border-bottom:1px solid #efefef;
+}
+.region-type image{
+  width:80rpx;
+  height:80rpx;
+  border-radius: 50%;
+}
+.region-type text{
+  display: block;
+  text-align: center;
+}
+
+/* 热门歌曲 */
+
+.h-header{
+  margin:15px 10px 5px;
+}
+.h-header image{
+  width:35px;
+  height:35px;
+  vertical-align: bottom;
+  border-radius: 50%;
+}
+.h-header text{
+  margin-left:5px;
+  font-size:12px;
+  vertical-align: bottom;
+}

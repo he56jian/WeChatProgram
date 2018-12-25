@@ -1,0 +1,47 @@
+
+
+
+
+/* 底部播放器 */
+.bottom-player{
+  box-sizing: border-box;
+  position:fixed;
+  bottom:0;
+  width:100%;
+  padding:5px 10px 5px;
+  background: #fff;
+}
+.song-play{
+  float:left;
+}
+.song-play image{
+  display: block;
+  width:40px;
+  height:40px;
+  border-radius: 50%;
+}
+.song-mass text{
+  overflow: hidden;
+  display: block;
+  font-size:29rpx;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+.song-mass{
+  overflow: hidden;
+  padding-left:10px;
+}
+.song-mass .song-aut{
+  font-size:12px;
+  color:#666;
+}
+.player-btn{
+ float:right;
+}
+.player-btn image{
+  display: block;
+  width:35px;
+  height:35px;
+  border-radius: 50%;
+}
+

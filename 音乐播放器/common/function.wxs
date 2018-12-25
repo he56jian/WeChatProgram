@@ -1,0 +1,24 @@
+//只能写ES5的语法
+
+//返回一个歌单的跳转url
+function deSheetUrl(sheet){
+  return '../sheet/list?id='+sheet.id+"&name="+sheet.name;
+}
+
+//数字转成歌曲进度字符串
+function toSongTime(n){
+  //判断是否传递值
+  n = n || 0;
+  return ~~(n/60) + ':' + (function(s){
+    s = Math.ceil(s);
+
+
+    return s<=9 ? "0"+s:s;
+  })(n%60)
+}
+
+
+module.exports = {
+  deSheetUrl: deSheetUrl,
+  toSongTime: toSongTime
+}

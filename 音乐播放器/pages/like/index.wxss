@@ -1,0 +1,89 @@
+
+@import "../../template/public/bottom-player.wxss";
+
+.container{
+  position:relative;
+  width:100vw;
+  margin-bottom:50px;
+}
+.like-header{
+  position:relative;
+  overflow: hidden;
+  z-index: -1;
+  margin-bottom: -75rpx;
+}
+.like-header > image{
+  position:absolute;
+  top:0;
+  left:0;
+  width:100%;
+  filter:blur(15px);
+    z-index: -1;
+}
+.like-head-view{
+  display: flex;
+  padding:100rpx 0 150rpx 50rpx;
+  color:#fff;
+  
+}
+.like-head-view .song-img{
+  display: block;
+  width:250rpx;
+  height:250rpx;
+}
+.like-head-view .like-des{
+  padding-left:50rpx;
+}
+.like-head-view .like-des .like-title{
+  padding:10px 0;
+}
+.like-head-view .user-inline{
+  display: flex;
+  align-items: center;
+  font-size:12px;
+  
+}
+.like-head-view .user-inline image{
+  margin-right:10px;
+  width:50rpx;
+  height:50rpx;
+  border-radius: 100px;
+}
+.like-body{
+  background:rgb(238, 238, 238);
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  font-size:12px;
+}
+.like-list-head{
+  padding:15px;
+  font-size: 16px;
+  border-bottom:  1px solid #aaa;
+}
+.like-list{
+  display: flex;
+  flex-direction: column;
+  padding:0 10px;
+}
+.like-item{
+  display: flex;
+}
+.like-item .item-num{
+  padding:10px 10px 0 10px;
+}
+.like-item .item-song text{
+  display: block;
+  padding:5rpx 0;
+}
+.item-song{
+  flex: 1;
+  border-bottom:1px solid #aaa;
+  overflow: hidden;
+}
+.like-item .item-song text:last-child{
+  font-size: 10px;
+  color:#aeaeae;
+}
+.song-name{
+  overflow: hidden;
+}

@@ -1,0 +1,10 @@
+
+
+<template name="query-form">
+ <form class='query-form' bindsubmit='query'>
+    <button form-type='submit'>
+      <image src='/images/search.jpg'></image>
+    </button>
+    <input name="searchVal" value='{{searchVal}}'></input>
+  </form>
+</template>

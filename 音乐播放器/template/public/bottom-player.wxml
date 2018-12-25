@@ -1,0 +1,17 @@
+<!-- 底部播放器 -->
+
+<template name="bottom-player">
+  <view class='bottom-player' >
+    <navigator class='song-play' url='/pages/index/playerdg?name={{song_name}}&mid={{song_mid}}' hover-class='none'>
+      <image src='{{album_min  || "/images/icon/music.png"}}'></image>
+    </navigator>
+    <view class='player-btn' bindtap='musicTap'>
+        <image src='/images/icon/{{paused === false ? "stop" : "player"}}.png' data-method="play"></image>
+    </view>
+    <navigator class='song-mass' url='/pages/index/playerdg?name={{song_name}}&mid={{song_mid}}'hover-class='none'>
+      <text class='song-name'>{{song_name || '暂无歌曲'}}</text>
+      <text class='song-aut'>{{song_orig || '未知歌手'}}</text>
+    </navigator>
+  </view>
+
+</template>

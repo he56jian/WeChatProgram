@@ -1,0 +1,29 @@
+
+/*歌曲列表*/
+
+.music-list{
+  display:flex;
+  padding:0 10px;
+  flex-wrap:wrap;
+}
+.music-list view{
+  margin-top:10px;
+}
+.music-list .music-view3{
+  width:31%;
+  margin-right:3.5%;
+}
+.music-list .music-view3:nth-child(3n){
+  margin-right:0;
+}
+.music-list image{
+  width:100%;
+}
+.music-list text{
+  display: -webkit-box;
+  font-size:12px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+}

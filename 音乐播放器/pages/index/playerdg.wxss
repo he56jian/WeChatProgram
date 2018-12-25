@@ -1,0 +1,167 @@
+
+@keyframes rotate{
+  to{
+    transform: rotate(360deg)
+  }
+  from{
+    transform: rotate(0deg) 
+  }
+}
+.container{
+  position:relative;
+  height:100vh;
+  overflow: hidden;
+  background:rgba(0,0,0,.2);
+}
+/* 背景 */
+.playerbg{
+  position:absolute;
+  z-index: -1;
+  width:100vw;
+  height:100vh;
+  filter:blur(25px);
+}
+
+/* 播放切换视图 */
+.player-tab{
+  height:calc(100vh - 130px);
+}
+.player-swiper{
+  height: 100%;
+}
+.player-cover{
+  display:flex;
+  height:100%;
+  align-items: center;
+   background:radial-gradient(
+    rgba(255,252,255,1),
+     rgba(255,252,255,.8) 50rpx,
+      rgba(255,252,255,.6) 100rpx,
+       rgba(255,252,255,.4) 150rpx,
+        rgba(255,252,255,.2) 200rpx,
+    rgba(200,200,200,.1) 260rpx,
+    transparent 262rpx
+  ) no-repeat center center /520rpx 520rpx;
+}
+.player-cover image{
+  display:block;
+  margin:auto;
+  width:500rpx;
+  height:500rpx;
+  border-radius: 50%;
+}
+/* 动画播放 */
+.player-cover image.play{
+  animation: rotate 10s infinite linear;
+}
+.player-cover image.pause{
+  animation-play-state: paused;
+}
+/* 底部菜单 */
+
+.player-menu{
+  display: flex;
+  justify-content: space-around;
+}
+.player-menu image{
+  display:block;
+  width:25px;
+  height:25px;
+}
+
+.player-slider{
+  display: flex;
+  margin:15px 20px;
+  align-items: center;
+  font-size: 12px;
+  color:#ade;
+}
+.player-slider slider{
+  flex: 1;
+  padding:0 10px;
+  margin:0 10px;
+}
+
+.player-btn{
+  display: flex;
+  justify-content: space-around;
+}
+.player-btn image{
+  display:block;
+  width:35px;
+  height:35px;
+}
+
+/* 呼出弹窗 */
+.psong-view.on{
+  animation: mymoveUp 1000ms forwards;
+}
+@keyframes mymoveUp{
+  from{bottom:-500rpx}
+  to{
+    bottom:0
+  }
+}
+
+.psong-view{
+  box-sizing: border-box;
+  position:absolute;
+  bottom:-500rpx;
+  width:100%;
+  height:500rpx;
+  padding:10px;
+  z-index: 1;
+  background: #fff;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+}
+.psong-header{
+  display:flex;
+  align-items: center;
+  width:100%;
+  justify-content: space-between;
+}
+.psong-header image{
+  width:35px;
+  height:35px;
+  color:#ade;
+}
+.psong-list{
+  display: flex;
+  flex-direction:column;
+  font-size:14px;
+  align-items: center;
+}
+.psong-list image{
+  width:20px;
+  height:20px;
+}
+.psong-item{
+  display: flex;
+  width:100%;
+  padding:7px 0;
+  align-items: center;
+  justify-content: space-between;
+}
+.psong-item text{
+  font-size: 12px;
+  color:#aaa;
+}
+
+/* //歌词 */
+.play-lyrics{
+  height:100%;
+}
+.play-lyrics swiper{
+  box-sizing: border-box;
+  padding:50rpx 0;
+  height:100%;
+}
+.play-lyrics swiper swiper-item{
+  text-align: center;
+  color:#ade
+}
+/* 歌词高亮 */
+.play-lyrics swiper swiper-item.on{
+  color:#fff;
+}

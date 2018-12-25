@@ -1,0 +1,23 @@
+
+<wxs src="../../common/function.wxs" module="common"></wxs>
+
+
+<!-- 歌曲列表 -->
+<template name="song-list">
+  <view class='hot-music'>
+    <view class='music-container' >
+      <view class='music-list' data-songs="{{songs}}" bindtap="onPlayer">
+        <template is="song-item" data="{{song}}"  wx:for='{{songs}}' wx:for-item="song"  />
+      </view>
+    </view>
+  </view>
+</template>
+
+
+<!-- 歌曲项目 -->
+<template name="song-item">
+  <view class='music-item music-view3'>
+    <image src='{{song.album_min}}' mode='widthFix' data-song="{{song}}"></image>
+    <text data-song="{{song}}">{{song.song_name}}</text>
+  </view>
+</template>

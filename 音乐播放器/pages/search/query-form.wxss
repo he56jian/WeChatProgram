@@ -1,0 +1,29 @@
+
+
+
+
+/* 搜索选项头 */
+.query-form{
+  display: block;
+  padding:5px 0px 5px 8px;
+  background: #f7f7f7;
+}
+.query-form button{
+  float:right;
+  padding:0;
+  margin:0 15px;
+  background: #f7f7f7;
+}
+.query-form button image{
+  display: block;
+  width:35px;
+  height:35px;
+}
+.query-form input{
+  height:35px;
+  border-bottom:1px solid #ddd;
+  color:#555;
+}
+.query-form button::after{
+  border: none;
+}

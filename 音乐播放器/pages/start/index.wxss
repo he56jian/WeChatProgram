@@ -1,0 +1,30 @@
+
+
+page{
+  background:#ade;
+}
+.container{
+  display: flex;
+  height:100vh;
+  align-items: center;
+  justify-content: center;
+}
+.start-view {
+  text-align: center;
+}
+.start-view image{
+  display: block;
+  margin-bottom: 300rpx;
+  width:400rpx;
+  height:400rpx;
+}
+.start-view button{ 
+  display: inline-block;
+  background: transparent;
+  border:1px solid #fff;
+  color:#fafafa;
+  font-size: 14px;
+}
+.start-view button::after{
+  border:none;
+}

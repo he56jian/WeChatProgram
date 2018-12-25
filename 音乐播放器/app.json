@@ -1,0 +1,15 @@
+{
+  "pages":[
+    "pages/index/index",       
+    "pages/char/index",
+    "pages/index/playerdg",
+    "pages/start/index",        
+    "pages/like/index",
+    "pages/search/list",
+    "pages/search/index",
+    "pages/sheet/list"
+  ],
+  "window":{
+    "navigationBarBackgroundColor":"#ade"
+  }
+}

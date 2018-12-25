@@ -1,0 +1,26 @@
+@import "../../template/public/bottom-player.wxss";
+@import './query-form.wxss';
+
+/* 搜索项目 */
+.form-list{
+  margin:0 0 50px;
+}
+.form-list-item{
+  display: flex;
+   padding-top:10px;
+  background:  #f7f7f7;
+}
+.form-list-item navigator{
+  flex:1;
+  padding-left:5px;
+  line-height: 35px;
+  color:#888;
+  border-bottom:1px solid#ddd;
+}
+
+.form-list-item image{
+  padding:10px;
+  width:25px;
+  height:25px;
+}
+
